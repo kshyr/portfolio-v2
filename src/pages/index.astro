@@ -1,0 +1,61 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Card from "../components/Card.astro";
+---
+
+<Layout title="Welcome to Astro.">
+  <main>
+    <h1>
+      Welcome to... <br /> my <span class="text-gradient"> Astro</span> blog?
+    </h1>
+    <ul role="list" class="grid grid-cols-2 gap-5 mt-4">
+      <Card
+        title="Astro: The Frontend Framework"
+        content="Astro is an open source frontend framework for building modern applications. It enables developers to create user interfaces with ease and efficiency, using a simple and intuitive syntax. Astro is designed to be lightweight, so developers can create apps quickly and efficiently. It offers support for a variety of popular web technologies, including HTML, CSS, and JavaScript. Astro also provides a wide range of components, from navigation menus to forms, that can be reused and customized to fit the needs of any project."
+        tags={["#frontendframework", "#Astro", "#HTML", "#CSS", "#JavaScript"]}
+      />
+      <Card
+        title="Flexible and Secure"
+        content="Astro provides developers with a wide range of options for creating secure applications. It uses a secure, encrypted communication channel between the server and the client. The framework also offers a range of authentication methods, including OAuth and OpenID Connect. Furthermore, Astro is flexible enough to enable developers to create apps that are tailored to their needs. Developers can easily customize components, such as forms, menus, and navigation, to suit the specific requirements of their project."
+        tags={[
+          "#flexible",
+          "#secure",
+          "#authentication",
+          "#OAuth",
+          "#OpenIDConnect",
+        ]}
+      />
+      <Card
+        title="Easy to Use"
+        content="Astro is designed to be easy to use, even for beginners. Its simple syntax enables developers to quickly get up and running with the framework. It also provides a range of helpful tutorials and documentation to help developers get the most out of their development experience. Additionally, Astro has a vibrant community of developers that can provide helpful answers to any questions."
+        tags={["#easytouse", "#tutorials", "#documentation", "#community"]}
+      />
+      <Card
+        title="Scaleable and Cross-Platform"
+        content="Astro is designed to be scalable, so it can be used to create apps of any size. It also supports popular web technologies, such as HTML, CSS, and JavaScript, so developers can create apps that can be used on a variety of platforms. Additionally, Astro's components can be reused and customized for different purposes. This makes the framework ideal for creating apps that need to be updated or adapted over time."
+        tags={["#scalable", "#crossplatform", "#HTML", "#CSS", "#JavaScript"]}
+      />
+    </ul>
+  </main>
+</Layout>
+
+<style>
+  main {
+    margin: auto;
+    padding: 1.5rem;
+    max-width: 80vw;
+  }
+  h1 {
+    font-size: 3rem;
+    font-weight: 800;
+    margin: 0;
+    text-align: center;
+  }
+  .text-gradient {
+    background-image: var(--accent-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 400%;
+    background-position: 0%;
+  }
+</style>
