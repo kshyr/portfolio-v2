@@ -9,7 +9,7 @@ const { title, content, tags } = Astro.props;
 ---
 
 <li
-  class="border border-black shadow-lg rounded-md p-4 flex flex-col gap-4 bg-gray-50"
+  class="border transition-all bg-gradient-to-r from-gray-50 to-gray-100 background-animate hover:via-yellow-50 hover:to-pink-100 hover:scale-[1.02] duration-300 border-black shadow-lg rounded-md p-4 flex flex-col gap-4 bg-gray-50"
 >
   <h2 class="text-2xl font-bold">
     {title}
@@ -21,3 +21,20 @@ const { title, content, tags } = Astro.props;
     {tags?.map((tag) => <li class="italic">{tag}</li>)}
   </ul>
 </li>
+
+<style>
+  .background-animate {
+    background-size: 500%;
+    animation: horizontal-movement 3s ease-in-out infinite;
+  }
+
+  @keyframes horizontal-movement {
+    50% {
+      background-position: 0% 50%;
+    }
+    0%,
+    100% {
+      background-position: 100% 50%;
+    }
+  }
+</style>
