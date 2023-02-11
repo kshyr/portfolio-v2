@@ -1,0 +1,23 @@
+<section class="h-screen relative">
+  <div class="polka polka-skills z-20"></div>
+  <div class="paper paper-skills z-10"></div>
+  <div class="paper paper-skills2 z-10"></div>
+
+  <div class="absolute cross-dots h-full top-0 left-0 w-full"></div>
+</section>
+<style>
+  @tailwind utilities;
+  @layer utilities {
+    .polka-skills {
+      clip-path: polygon(14% 0, 0 7%, 4% 0);
+    }
+
+    .paper-skills {
+      clip-path: polygon(0 0, 100% 0, 100% 9%, 0 34%);
+    }
+
+    .paper-skills2 {
+      clip-path: polygon(0 74%, 100% 19%, 100% 100%, 0 100%);
+    }
+  }
+</style>
