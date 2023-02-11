@@ -8,6 +8,7 @@ module.exports = {
       fontFamily: {
         sans: ["e-Ukraine", ...defaultTheme.fontFamily.sans],
         misto: ["Misto"],
+        agra: ["PP Agrandir"],
       },
     },
   },

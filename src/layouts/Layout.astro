@@ -1,4 +1,6 @@
 ---
+import Header from "../components/Header.astro";
+
 export interface Props {
   title: string;
 }
@@ -16,6 +18,7 @@ const { title } = Astro.props;
     <title>{title}</title>
   </head>
   <body>
+    <Header />
     <slot />
   </body>
 </html>
@@ -58,6 +61,62 @@ const { title } = Astro.props;
     font-family: "e-Ukraine";
     src: url("/fonts/e-Ukraine-Thin.otf") format("opentype");
     font-weight: 100;
+  }
+
+  @font-face {
+    font-family: "PP Agrandir";
+    src: url("/fonts/PPAgrandir-Regular.otf") format("opentype");
+    font-weight: 400;
+  }
+
+  @font-face {
+    font-family: "PP Agrandir";
+    src: url("/fonts/PPAgrandir-GrandHeavy.otf") format("opentype");
+    font-weight: 700;
+  }
+
+  @font-face {
+    font-family: "PP Agrandir";
+    src: url("/fonts/PPAgrandir-WideBlackItalic.otf") format("opentype");
+    font-weight: 700;
+    font-style: italic;
+  }
+
+  @font-face {
+    font-family: "PP Agrandir";
+    src: url("/fonts/PPAgrandirText-Bold.otf") format("opentype");
+    font-weight: 600;
+  }
+
+  @font-face {
+    font-family: "PP Agrandir";
+    src: url("/fonts/PPAgrandir-NarrowRegular.otf") format("opentype");
+    font-weight: 500;
+  }
+
+  @font-face {
+    font-family: "PP Agrandir";
+    src: url("/fonts/PPAgrandir-GrandLight.otf") format("opentype");
+    font-weight: 300;
+  }
+
+  @font-face {
+    font-family: "PP Agrandir";
+    src: url("/fonts/PPAgrandir-WideLight.otf") format("opentype");
+    font-weight: 200;
+  }
+
+  @font-face {
+    font-family: "PP Agrandir";
+    src: url("/fonts/PPAgrandir-ThinRegular.otf") format("opentype");
+    font-weight: 100;
+  }
+
+  @font-face {
+    font-family: "PP Agrandir";
+    src: url("/fonts/PPAgrandir-ThinItalic.otf") format("opentype");
+    font-weight: 100;
+    font-style: italic;
   }
 
   @font-face {

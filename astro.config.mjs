@@ -7,5 +7,7 @@ import { astroImageTools } from "astro-imagetools";
 export default defineConfig({
   integrations: [tailwind(), react(), astroImageTools],
   output: "server",
-  adapter: vercel(),
+  adapter: vercel({
+    analytics: true,
+  }),
 });
