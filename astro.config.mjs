@@ -1,9 +1,11 @@
-import { defineConfig } from 'astro/config';
-
-// https://astro.build/config
+import { defineConfig } from "astro/config";
 import tailwind from "@astrojs/tailwind";
+import react from "@astrojs/react";
+import vercel from "@astrojs/vercel/edge";
+import { astroImageTools } from "astro-imagetools";
 
-// https://astro.build/config
 export default defineConfig({
-  integrations: [tailwind()]
+  integrations: [tailwind(), react(), astroImageTools],
+  output: "server",
+  adapter: vercel(),
 });
