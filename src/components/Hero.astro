@@ -1,23 +1,9 @@
-<section class="h-screen flex justify-center items-center px-24 py-16">
-  <div
-    class="flex flex-col-reverse gap-8 sm:gap-12 md:flex-row justify-between polka-background items-center w-full relative z-20"
-  >
-    <div class="flex flex-col">
-      <h1 class="font-misto text-4xl sm:text-7xl">
-        Hello, <br /> I'm Kostiantyn
-      </h1>
-      <div class="flex w-full justify-between">
-        <h3 class="font-misto">###</h3>
-        <h3 class="font-agra text-xl">Frontend Developer</h3>
-      </div>
-      <div class="flex w-full justify-between">
-        <h3 class="font-agra text-lg">based in New Jersey</h3>
-        <h3 class="font-misto">///</h3>
-      </div>
-    </div>
+---
+import HeroClient from "./HeroClient";
+---
 
-    <img src="/assets/picofme.svg" class="z-20 h-56 sm:h-72 md:h-96" />
-  </div>
+<section class="h-screen flex justify-center items-center px-24 py-16">
+  <HeroClient client:load />
   <div class="polka z-10"></div>
   <div class="paper z-[5]"></div>
 </section>
