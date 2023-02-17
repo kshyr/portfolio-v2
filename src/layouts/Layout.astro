@@ -1,5 +1,5 @@
 ---
-import Header from "../components/Header.astro";
+import Header from "../components/Header";
 
 export interface Props {
   title: string;
@@ -18,7 +18,7 @@ const { title } = Astro.props;
     <title>{title}</title>
   </head>
   <body>
-    <Header />
+    <Header client:load />
     <slot />
   </body>
 </html>
@@ -144,10 +144,10 @@ const { title } = Astro.props;
     left: 0;
     background-color: #000000;
     opacity: 1;
-    background-image: radial-gradient(#ffffff88 0.5px, transparent 0.5px),
-      radial-gradient(#ffffffcc 0.5px, #000000 0.5px);
-    background-size: 30px 30px;
-    background-position: 0 0, 15px 15px;
+    background-image: radial-gradient(#ffffff33 0.75px, transparent 0.75px),
+      radial-gradient(#ffffffaa 1px, #000000 1px);
+    background-size: 60px 60px;
+    background-position: 0 0, 30px 30px;
     clip-path: polygon(48% 0%, 74% 0%, 100% 27%, 100% 71%, 14% 100%, 4% 100%);
   }
 
@@ -159,12 +159,13 @@ const { title } = Astro.props;
     left: 0;
     background-color: #000000;
 
-    background-image: linear-gradient(#ffffff20 1px, transparent 1px),
-      linear-gradient(90deg, #ffffff20 1px, transparent 1px),
-      linear-gradient(#ffffff20 0.5px, transparent 0.5px),
-      linear-gradient(90deg, #ffffff20 0.5px, #000000 0.5px);
+    background-image: linear-gradient(#ffffff10 1.25px, transparent 1.25px),
+      linear-gradient(90deg, #ffffff10 1.25px, transparent 1.25px),
+      linear-gradient(#ffffff10 1px, transparent 1px),
+      linear-gradient(90deg, #ffffff10 1px, #000000 1px);
     background-size: 200px 200px, 200px 200px, 40px 40px, 40px 40px;
-    background-position: -1px -1px, -1px -1px, -0.5px -0.5px, -0.5px -0.5px;
+    background-position: -1.25px -1.25px, -1.25px -1.25px, -1px -1px,
+      -0.75px -0.57px;
   }
   .cross-dots {
     width: 100%;
