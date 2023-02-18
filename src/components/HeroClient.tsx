@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import Pic from "./Pic";
 
 export default function HeroClient() {
   return (
@@ -58,8 +59,7 @@ export default function HeroClient() {
           </motion.h3>
         </div>
       </div>
-
-      <img src="/assets/picofme.svg" className="z-20 h-56 sm:h-72 md:h-96" />
+      <Pic />
     </div>
   );
 }
