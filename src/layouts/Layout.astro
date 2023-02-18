@@ -27,6 +27,7 @@ const { title } = Astro.props;
     @apply text-white bg-black;
     overflow-y: overlay;
     overflow-x: hidden;
+    scroll-behavior: smooth;
   }
 
   body {
@@ -157,7 +158,7 @@ const { title } = Astro.props;
 
   .paper {
     width: 100%;
-    height: 100%;
+    height: 120%;
     position: absolute;
     top: 0;
     left: 0;
@@ -178,7 +179,7 @@ const { title } = Astro.props;
     left: 0;
     bottom: 0;
     right: 0;
-    background: radial-gradient(circle, transparent 25%, #000 150%);
+    background: radial-gradient(circle, transparent 50%, #000 100%);
   }
 
   .cross-dots {
@@ -187,8 +188,8 @@ const { title } = Astro.props;
     position: absolute;
     top: 0;
     left: 0;
-    background: radial-gradient(black 3px, transparent 4px),
-      radial-gradient(black 3px, transparent 4px),
+    background: radial-gradient(black 0, transparent 0),
+      radial-gradient(black 0, transparent 0),
       linear-gradient(#fff 4px, transparent 0),
       linear-gradient(
         45deg,
@@ -211,6 +212,6 @@ const { title } = Astro.props;
       #fff;
     background-size: 109px 109px, 109px 109px, 100% 6px, 109px 109px,
       109px 109px;
-    background-position: 54px 55px, 0px 0px, 0px 0px, 0px 0px, 0px 0px;
+    background-position: 54px 55px, 46px 46px, 46px 46px, 46px 46px, 46px 46px;
   }
 </style>

@@ -1,25 +1,16 @@
-<section class="h-screen relative">
-  <h1
-    class="text-7xl w-fit font-misto z-50 -rotate-[8deg] relative top-40 left-16"
-  >
-    {"<-My Skills->"}
-  </h1>
-  <div
-    class="skills-desc-box z-50 flex gap-6 items-center relative -rotate-[10deg] top-20 left-8 font-agra font-bold text-black"
-  >
-    <span class="text-[5.25rem]">Lorem</span>
-    <span class="text-[4.25rem]">ipsum</span>
-    <span class="text-[3.5rem]">dolor</span>
-    <span class="text-[2.75rem]">sit</span>
-    <span class="text-[2.25rem]">amet</span>
-  </div>
+---
+import SkillsClient from "./SkillsClient";
+---
 
+<section class="h-screen relative" id="skills">
   <div class="polka polka-skills z-20"></div>
-  <div class="paper paper-skills z-10"></div>
-  <div class="paper paper-skills2 z-10"></div>
-  <div class="cross-dots h-full top-0 left-0 w-full"></div>
+  <!-- <div class="paper paper-skills z-10"></div> -->
+  <!-- <div class="paper paper-skills2 z-10"></div> -->
+
+  <SkillsClient client:load />
+  <div class="paper paper-skills"></div>
 </section>
-<style>
+<style is:global>
   @tailwind utilities;
   @layer utilities {
     .polka-skills {
@@ -27,7 +18,18 @@
     }
 
     .paper-skills {
-      clip-path: polygon(0 0, 100% 0, 100% 9%, 0 34%);
+      height: 100%;
+    }
+
+    .paper-skills:after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      background: radial-gradient(circle, transparent 50%, #000 100%);
+      background-position: 0 24rem;
     }
 
     .paper-skills2 {

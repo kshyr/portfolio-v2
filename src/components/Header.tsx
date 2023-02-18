@@ -31,7 +31,7 @@ export default function Navbar() {
           <a href="/about">{"resume>"}</a>
         </li>
         <li>
-          <a href="/contact">skills</a>
+          <a href="#skills">skills</a>
         </li>
         <li>
           <a href="/blog">contact</a>
