@@ -2,13 +2,11 @@
 import SkillsClient from "./SkillsClient";
 ---
 
-<section class="h-screen relative" id="skills">
-  <div class="polka polka-skills z-20"></div>
+<section class="h-screen relative overflow-hidden w-full" id="skills">
   <!-- <div class="paper paper-skills z-10"></div> -->
   <!-- <div class="paper paper-skills2 z-10"></div> -->
 
   <SkillsClient client:load />
-  <div class="paper paper-skills"></div>
 </section>
 <style is:global>
   @tailwind utilities;

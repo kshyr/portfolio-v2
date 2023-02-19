@@ -1,5 +1,6 @@
 ---
 import Header from "../components/Header";
+import PaperBackground from "../components/PaperBackground";
 
 export interface Props {
   title: string;
@@ -19,18 +20,23 @@ const { title } = Astro.props;
   </head>
   <body>
     <Header client:load />
+    <PaperBackground client:load />
     <slot />
   </body>
 </html>
 <style is:global>
   html {
-    @apply text-white bg-black;
-    overflow-y: overlay;
+    @apply text-white;
     overflow-x: hidden;
     scroll-behavior: smooth;
   }
 
+  * {
+    box-sizing: border-box;
+  }
+
   body {
+    height: 100%;
     overflow-x: hidden;
   }
 
@@ -158,10 +164,12 @@ const { title } = Astro.props;
 
   .paper {
     width: 100%;
-    height: 120%;
+    height: 400%;
     position: absolute;
-    top: 0;
+    top: -100px;
     left: 0;
+    bottom: 0;
+    right: 0;
     background-color: #000000;
     background-image: linear-gradient(#ffffff10 1.25px, transparent 1.25px),
       linear-gradient(90deg, #ffffff10 1.25px, transparent 1.25px),
@@ -173,7 +181,7 @@ const { title } = Astro.props;
   }
 
   .paper:after {
-    content: "";
+    height: 100%;
     position: absolute;
     top: 0;
     left: 0;
