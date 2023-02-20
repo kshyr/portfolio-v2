@@ -59,7 +59,7 @@ export default function SkillsClient() {
         whileInView={{ width: "140%", opacity: 1, scale: 1, rotate: -5 }}
         transition={{ delay: 0.3, duration: 0.7, ease: "easeOut" }}
         viewport={{ once: true }}
-        className="cross-dots h-16 lg:h-20 z-50 -left-16 top-28 px-24 py-4 sm:px-24"
+        className="cross-dots h-16 lg:h-20 z-20 -left-16 top-28 px-24 py-4 sm:px-24"
       >
         <motion.h1
           initial={{ x: 400, opacity: 0 }}
@@ -72,7 +72,7 @@ export default function SkillsClient() {
         </motion.h1>
       </motion.div>
 
-      <motion.div className="w-full text-white text-lg z-50 relative top-96 px-8 lg:px-52 xl:px-80 py-4 place-items-center grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 ">
+      <motion.div className="w-full text-white text-lg z-20 relative top-96 px-8 lg:px-52 xl:px-80 py-4 place-items-center grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 ">
         {skills.map((item, i) => {
           const x = useSpring(0.5, { stiffness: 10000, damping: 500 });
           const y = useSpring(0.5, { stiffness: 10000, damping: 500 });
