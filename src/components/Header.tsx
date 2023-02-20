@@ -28,7 +28,17 @@ export default function Navbar() {
       <img src="/assets/logo.svg" className="h-12 sm:h-16" />
       <ul className="h-full flex gap-4 sm:gap-12 md:gap-16 justify-between items-center z-40">
         <li>
-          <a href="/about">{"resume>"}</a>
+          <button
+            onClick={() =>
+              window.open(
+                "https://docdro.id/BZHzkcl",
+                "_blank",
+                "noopener,noreferrer"
+              )
+            }
+          >
+            {"resume>"}
+          </button>
         </li>
         <li>
           <a href="#skills">skills</a>

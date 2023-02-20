@@ -10,7 +10,7 @@ export default function HeroClient() {
     <>
       <div className="flex flex-col-reverse gap-8 sm:gap-12 md:flex-row justify-between items-center w-full relative z-20">
         <motion.div style={{ y: y2 }} className="flex flex-col">
-          <h1 className="font-misto text-4xl sm:text-7xl">
+          <h1 className="font-misto text-4xl md:text-5xl lg:text-6xl xl:text-7xl">
             <motion.span
               initial={{ y: -300, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}

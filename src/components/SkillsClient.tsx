@@ -61,7 +61,7 @@ export default function SkillsClient() {
         whileInView={{ width: "140%", opacity: 1, scale: 1, rotate: -5 }}
         transition={{ delay: 0.3, duration: 0.7, ease: "easeOut" }}
         viewport={{ once: true }}
-        className="cross-dots h-16 z-50 -left-16 top-28 px-24 py-4 sm:px-24"
+        className="cross-dots h-16 lg:h-20 z-50 -left-16 top-28 px-24 py-4 sm:px-24"
       >
         <motion.h1
           initial={{ x: 400, opacity: 0 }}
