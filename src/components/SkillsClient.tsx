@@ -31,7 +31,7 @@ const skills: SkillItem[] = [
   {
     name: "Next.js",
     src: "https://media.crystallize.com/crystallize_marketing/23/1/14/6/next_js_logo.svg",
-    scale: 1.4,
+    scale: 1.3,
   },
   {
     name: "Tailwind CSS",
@@ -74,7 +74,7 @@ export default function SkillsClient() {
         </motion.h1>
       </motion.div>
 
-      <motion.div className="w-full text-white text-lg z-50 relative top-64 lg:top-96  px-8 py-4 place-items-center grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 ">
+      <motion.div className="w-full text-white text-lg z-50 relative top-64 lg:top-96 px-8 lg:px-64 py-4 place-items-center grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 ">
         {skills.map((item, i) => {
           const x = useSpring(0.5, { stiffness: 10000, damping: 500 });
           const y = useSpring(0.5, { stiffness: 10000, damping: 500 });
@@ -152,7 +152,7 @@ export default function SkillsClient() {
                 x.set(0.5);
                 y.set(0.5);
               }}
-              className="flex flex-col justify-center items-center h-48 w-32 sm:h-64 sm:w-48 border p-8 rounded-2xl bg-black shadow-md gap-4"
+              className="flex flex-col justify-center items-center h-48 w-32 sm:h-52 sm:w-40 border p-8 rounded-2xl bg-black shadow-md gap-4"
             >
               <motion.img
                 style={{
