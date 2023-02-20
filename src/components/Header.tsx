@@ -26,7 +26,7 @@ export default function Navbar() {
       className="flex fixed top-0 left-0 w-full justify-between px-8 sm:px-16 py-8 font-agra text-base sm:text-xl font-bold items-center z-50 mix-blend-difference"
     >
       <img src="/assets/logo.svg" className="h-12 sm:h-16" />
-      <ul className="h-full flex gap-4 sm:gap-12 md:gap-16 justify-between items-center z-40">
+      <ul className="h-full invisible md:visible flex gap-4 sm:gap-8 md:gap-8 lg:gap-12 xl:gap-16 justify-between items-center z-40">
         <li>
           <button
             onClick={() =>
@@ -42,6 +42,9 @@ export default function Navbar() {
         </li>
         <li>
           <a href="#skills">skills</a>
+        </li>
+        <li>
+          <a href="#projects">projects</a>
         </li>
         <li>
           <a href="/blog">contact</a>

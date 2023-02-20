@@ -2,7 +2,10 @@
 import SkillsClient from "./SkillsClient";
 ---
 
-<section class="h-[200vh] relative overflow-hidden w-full" id="skills">
+<section
+  class="h-[90rem] md:h-[75rem] lg:h-[60rem] relative overflow-hidden w-full"
+  id="skills"
+>
   <!-- <div class="paper paper-skills z-10"></div> -->
   <!-- <div class="paper paper-skills2 z-10"></div> -->
 
@@ -11,27 +14,8 @@ import SkillsClient from "./SkillsClient";
 <style is:global>
   @tailwind utilities;
   @layer utilities {
-    .polka-skills {
-      clip-path: polygon(14% 0, 0 7%, 4% 0);
-    }
-
     .paper-skills {
       height: 100%;
-    }
-
-    .paper-skills:after {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      bottom: 0;
-      right: 0;
-      background: radial-gradient(circle, transparent 50%, #000 100%);
-      background-position: 0 24rem;
-    }
-
-    .paper-skills2 {
-      clip-path: polygon(0 74%, 100% 12%, 100% 100%, 0 100%);
     }
   }
 </style>

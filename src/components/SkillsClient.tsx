@@ -52,8 +52,6 @@ const skills: SkillItem[] = [
 ];
 
 export default function SkillsClient() {
-  const { scrollYProgress } = useScroll();
-  const y = useTransform(scrollYProgress, [0, 1], ["0%", "60%"]);
   return (
     <>
       <motion.div
@@ -68,13 +66,13 @@ export default function SkillsClient() {
           whileInView={{ x: 0, opacity: 1 }}
           transition={{ delay: 0.5, type: "spring", mass: 0.9 }}
           viewport={{ once: true }}
-          className="text-4xl md:text-7xl font-misto z-50 text-black whitespace-nowrap"
+          className="text-4xl md:text-7xl font-misto text-black whitespace-nowrap"
         >
           {"<-My Skills->"}
         </motion.h1>
       </motion.div>
 
-      <motion.div className="w-full text-white text-lg z-50 relative top-64 lg:top-96 px-8 lg:px-64 py-4 place-items-center grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 ">
+      <motion.div className="w-full text-white text-lg z-50 relative top-96 px-8 lg:px-52 xl:px-80 py-4 place-items-center grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 ">
         {skills.map((item, i) => {
           const x = useSpring(0.5, { stiffness: 10000, damping: 500 });
           const y = useSpring(0.5, { stiffness: 10000, damping: 500 });
@@ -198,11 +196,6 @@ export default function SkillsClient() {
           );
         })}
       </motion.div>
-
-      <motion.div
-        style={{ y }}
-        className="polka polka-skills z-20"
-      ></motion.div>
     </>
   );
 }
