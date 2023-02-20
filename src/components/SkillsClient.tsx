@@ -71,20 +71,40 @@ export default function SkillsClient() {
             }
           );
 
+          const diagonal2Movement = useTransform<number, number>(
+            [rotateX, rotateY],
+            ([newRotateX, newRotateY]) => {
+              const position: number = newRotateX - newRotateY;
+              return position;
+            }
+          );
+
           const sheenPosition = useTransform(
             diagonalMovement,
             [-50, 50],
-            [-100, 200]
+            [200, -100]
+          );
+
+          const sheenPosition2 = useTransform(
+            diagonal2Movement,
+            [-50, 50],
+            [200, -100]
           );
 
           const sheenOpacity = useTransform(
             sheenPosition,
             [-100, 50, 200],
-            [0, 0.08, 0]
+            [0.2, 0.1, 0.2]
           );
 
+          const sheenOpacity2 = useTransform(
+            sheenPosition2,
+            [-100, 50, 200],
+            [0.3, 0, 0.3]
+          );
           const sheenGradient = useMotionTemplate`linear-gradient(55deg, transparent, 
-            rgba(255 255 255 / ${sheenOpacity}) ${sheenPosition}%, transparent)`;
+            rgba(255 255 255 / ${sheenOpacity}) ${sheenPosition}%, transparent),linear-gradient(-35deg, transparent, 
+            rgba(255 255 255 / ${sheenOpacity2}) ${sheenPosition2}%, transparent)`;
 
           function onHover(e: MouseEvent) {
             const bounds = e.currentTarget.getBoundingClientRect();

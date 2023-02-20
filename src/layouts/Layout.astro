@@ -28,6 +28,7 @@ const { title } = Astro.props;
   html {
     @apply text-white;
     overflow-x: hidden;
+    overflow-y: overlay;
     scroll-behavior: smooth;
   }
 
@@ -181,9 +182,8 @@ const { title } = Astro.props;
   }
 
   .paper:after {
-    height: 100%;
     position: absolute;
-    top: 0;
+    top: 1000px;
     left: 0;
     bottom: 0;
     right: 0;
