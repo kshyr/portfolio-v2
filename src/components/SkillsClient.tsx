@@ -59,14 +59,14 @@ export default function SkillsClient() {
         whileInView={{ width: "140%", opacity: 1, scale: 1, rotate: -5 }}
         transition={{ delay: 0.3, duration: 0.7, ease: "easeOut" }}
         viewport={{ once: true }}
-        className="cross-dots h-16 lg:h-20 z-20 -left-16 top-28 px-24 py-4 sm:px-24"
+        className="cross-dots h-16 lg:h-20 z-20 -left-16 top-28 px-24 py-4 md:py-3 lg:py-4 sm:px-24"
       >
         <motion.h1
           initial={{ x: 400, opacity: 0 }}
           whileInView={{ x: 0, opacity: 1 }}
           transition={{ delay: 0.5, type: "spring", mass: 0.9 }}
           viewport={{ once: true }}
-          className="text-4xl md:text-7xl font-misto text-black whitespace-nowrap"
+          className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-misto text-black whitespace-nowrap"
         >
           {"<-My Skills->"}
         </motion.h1>
