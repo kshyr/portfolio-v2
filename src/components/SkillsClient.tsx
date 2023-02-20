@@ -122,7 +122,13 @@ export default function SkillsClient() {
               whileInView={{ opacity: 1 }}
               transition={{ duration: 0.5, delay: 0.2 * i + 0.5 }}
               viewport={{ once: true }}
-              style={{ x, y, rotateX, rotateY, backgroundImage: sheenGradient }}
+              style={{
+                x,
+                y,
+                rotateX,
+                rotateY,
+                backgroundImage: sheenGradient,
+              }}
               onPointerMove={onHover}
               onHoverEnd={() => {
                 x.set(0.5);
@@ -130,11 +136,45 @@ export default function SkillsClient() {
               }}
               className="flex flex-col justify-center items-center h-72 w-52 border p-8 rounded-2xl bg-black shadow-md gap-4"
             >
-              <img
+              <motion.img
+                style={{
+                  x: useTransform(x, [0, 1], [-19, 20]),
+                  y: useTransform(y, [0, 1], [-19, 20]),
+                  filter: useMotionTemplate`drop-shadow(${useTransform(
+                    x,
+                    [0, 1],
+                    [10, -9]
+                  )}px ${useTransform(
+                    y,
+                    [0, 1],
+                    [10, -9]
+                  )}px 2px rgba(0,0,0,0.4))`,
+                  rotateX: useTransform(rotateX, [12, -12], [8, -8]),
+                  rotateY: useTransform(rotateY, [-12, 12], [-8, 8]),
+                }}
                 src={item.src}
                 className="w-24 aspect-auto pointer-events-none"
               />
-              <h2 className="font-agra font-semibold">{item.name}</h2>
+              <motion.h2
+                style={{
+                  x: useTransform(x, [0, 1], [-14, 15]),
+                  y: useTransform(y, [0, 1], [-14, 15]),
+                  rotateX: useTransform(rotateX, [12, -12], [8, -8]),
+                  rotateY: useTransform(rotateY, [-12, 12], [-8, 8]),
+                  filter: useMotionTemplate`drop-shadow(${useTransform(
+                    x,
+                    [0, 1],
+                    [10, -9]
+                  )}px ${useTransform(
+                    y,
+                    [0, 1],
+                    [10, -9]
+                  )}px 1px rgba(0,0,0,0.5))`,
+                }}
+                className="font-agra font-semibold"
+              >
+                {item.name}
+              </motion.h2>
             </motion.div>
           );
         })}
