@@ -12,6 +12,7 @@ import type { MouseEvent } from "react";
 type SkillItem = {
   name: string;
   src: string;
+  scale?: number;
 };
 
 const skills: SkillItem[] = [
@@ -28,35 +29,52 @@ const skills: SkillItem[] = [
     src: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/2300px-React-icon.svg.png",
   },
   {
+    name: "Next.js",
+    src: "https://media.crystallize.com/crystallize_marketing/23/1/14/6/next_js_logo.svg",
+    scale: 1.4,
+  },
+  {
     name: "Tailwind CSS",
     src: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/Tailwind_CSS_Logo.svg/2048px-Tailwind_CSS_Logo.svg.png",
+  },
+  {
+    name: "GraphQL",
+    src: "https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/graphql-icon.png",
+  },
+  {
+    name: "Amazon Web Services",
+    src: "https://d24wuq6o951i2g.cloudfront.net/img/events/id/458/458075889/assets/e0c433d04beed0b0c26a469ac4c45f25.AWS-Logo-halfwhite.png",
+  },
+  {
+    name: "Rust",
+    src: "https://www.rust-lang.org/logos/rust-logo-512x512.png",
   },
 ];
 
 export default function SkillsClient() {
   const { scrollYProgress } = useScroll();
-  const y = useTransform(scrollYProgress, [0, 1], ["0%", "120%"]);
+  const y = useTransform(scrollYProgress, [0, 1], ["0%", "60%"]);
   return (
     <>
       <motion.div
         initial={{ width: "0%", opacity: 0, scale: 0.8 }}
-        whileInView={{ width: "140%", opacity: 1, scale: 1, rotate: -12 }}
+        whileInView={{ width: "140%", opacity: 1, scale: 1, rotate: -5 }}
         transition={{ delay: 0.3, duration: 0.7, ease: "easeOut" }}
         viewport={{ once: true }}
-        className="cross-dots h-24 -rotate-12 z-50 -left-16 top-48 px-16 sm:px-24 py-7 sm:py-5"
+        className="cross-dots h-16 z-50 -left-16 top-28 px-24 py-4 sm:px-24"
       >
         <motion.h1
           initial={{ x: 400, opacity: 0 }}
           whileInView={{ x: 0, opacity: 1 }}
           transition={{ delay: 0.5, type: "spring", mass: 0.9 }}
           viewport={{ once: true }}
-          className="text-5xl md:text-7xl font-misto z-50 text-black whitespace-nowrap"
+          className="text-4xl md:text-7xl font-misto z-50 text-black whitespace-nowrap"
         >
           {"<-My Skills->"}
         </motion.h1>
       </motion.div>
 
-      <motion.div className="w-full text-white text-lg z-50 relative top-64 h-[calc(100vh-24rem)] p-24 place-items-center grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 ">
+      <motion.div className="w-full text-white text-lg z-50 relative top-64 lg:top-96  px-8 py-4 place-items-center grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 ">
         {skills.map((item, i) => {
           const x = useSpring(0.5, { stiffness: 10000, damping: 500 });
           const y = useSpring(0.5, { stiffness: 10000, damping: 500 });
@@ -134,12 +152,13 @@ export default function SkillsClient() {
                 x.set(0.5);
                 y.set(0.5);
               }}
-              className="flex flex-col justify-center items-center h-72 w-52 border p-8 rounded-2xl bg-black shadow-md gap-4"
+              className="flex flex-col justify-center items-center h-48 w-32 sm:h-64 sm:w-48 border p-8 rounded-2xl bg-black shadow-md gap-4"
             >
               <motion.img
                 style={{
                   x: useTransform(x, [0, 1], [-19, 20]),
                   y: useTransform(y, [0, 1], [-19, 20]),
+                  scale: item.scale ?? 1.0,
                   filter: useMotionTemplate`drop-shadow(${useTransform(
                     x,
                     [0, 1],
@@ -171,7 +190,7 @@ export default function SkillsClient() {
                     [10, -9]
                   )}px 1px rgba(0,0,0,0.5))`,
                 }}
-                className="font-agra font-semibold"
+                className="text-md font-medium font-agra text-center leading-tight"
               >
                 {item.name}
               </motion.h2>
