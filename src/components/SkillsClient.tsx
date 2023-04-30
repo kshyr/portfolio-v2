@@ -46,8 +46,8 @@ const skills: SkillItem[] = [
     src: "https://d24wuq6o951i2g.cloudfront.net/img/events/id/458/458075889/assets/e0c433d04beed0b0c26a469ac4c45f25.AWS-Logo-halfwhite.png",
   },
   {
-    name: "Rust",
-    src: "https://www.rust-lang.org/logos/rust-logo-512x512.png",
+    name: "Framer Motion",
+    src: "https://cdn.worldvectorlogo.com/logos/framer-motion.svg",
   },
 ];
 
