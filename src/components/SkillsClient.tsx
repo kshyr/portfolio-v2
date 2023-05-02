@@ -8,6 +8,7 @@ import {
   useTransform,
 } from "framer-motion";
 import type { MouseEvent } from "react";
+import HeadingClient from "./HeadingClient";
 
 type SkillItem = {
   name: string;
@@ -54,23 +55,7 @@ const skills: SkillItem[] = [
 export default function SkillsClient() {
   return (
     <>
-      <motion.div
-        initial={{ width: "0%", opacity: 0, scale: 0.8 }}
-        whileInView={{ width: "140%", opacity: 1, scale: 1, rotate: -5 }}
-        transition={{ delay: 0.3, duration: 0.7, ease: "easeOut" }}
-        viewport={{ once: true }}
-        className="cross-dots h-16 lg:h-20 z-20 -left-16 top-28 px-24 py-4 md:py-3 lg:py-4 sm:px-24"
-      >
-        <motion.h1
-          initial={{ x: 400, opacity: 0 }}
-          whileInView={{ x: 0, opacity: 1 }}
-          transition={{ delay: 0.5, type: "spring", mass: 0.9 }}
-          viewport={{ once: true }}
-          className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-misto text-black whitespace-nowrap"
-        >
-          {"<-My Skills->"}
-        </motion.h1>
-      </motion.div>
+      <HeadingClient heading={"<-My skills->"} rotate={-5} />
 
       <motion.div className="w-full text-white text-lg z-20 relative top-96 px-8 lg:px-52 xl:px-80 py-4 place-items-center grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 ">
         {skills.map((item, i) => {

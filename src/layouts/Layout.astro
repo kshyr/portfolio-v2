@@ -1,6 +1,5 @@
 ---
 import Header from "../components/Header";
-import PaperBackground from "../components/PaperBackground";
 
 export interface Props {
   title: string;
@@ -26,8 +25,8 @@ const { title } = Astro.props;
     <meta property="og:image" content="https://i.ibb.co/JKxtKmV/Group-3.png" />
   </head>
   <body>
+    <div class="paper z-[5] fixed"/>
     <Header client:load />
-    <PaperBackground client:load />
     <slot />
   </body>
 </html>
@@ -172,9 +171,9 @@ const { title } = Astro.props;
 
   .paper {
     width: 100%;
-    height: 400%;
+    height: 200%;
     position: absolute;
-    top: -100px;
+    top: -120px;
     left: 0;
     bottom: 0;
     right: 0;

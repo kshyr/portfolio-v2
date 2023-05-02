@@ -3,7 +3,7 @@ import Pic from "./Pic";
 
 export default function HeroClient() {
   const { scrollYProgress } = useScroll();
-  const y = useTransform(scrollYProgress, [0, 1], ["0%", "120%"]);
+  const y = useTransform(scrollYProgress, [0, 1], ["0%", "100%"]);
   const y2 = useTransform(scrollYProgress, [0, 1], ["0%", "240%"]);
 
   return (
