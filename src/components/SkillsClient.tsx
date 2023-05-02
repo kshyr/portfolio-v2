@@ -57,7 +57,7 @@ export default function SkillsClient() {
     <>
       <HeadingClient heading={"<-My skills->"} rotate={-5} />
 
-      <motion.div className="w-full text-white text-lg z-20 relative top-96 px-8 lg:px-52 xl:px-80 py-4 place-items-center grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 ">
+      <motion.div className="w-full text-white text-lg z-20 relative top-96 px-8 lg:px-52 xl:px-80 py-4 place-items-center grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 lg:gap-32">
         {skills.map((item, i) => {
           const x = useSpring(0.5, { stiffness: 10000, damping: 500 });
           const y = useSpring(0.5, { stiffness: 10000, damping: 500 });
