@@ -11,6 +11,10 @@ module.exports = {
         agra: ["PP Agrandir"],
       },
     },
+    colors: {
+      white: "#f2fbeb ",
+      black: "#171719 ",
+    },
   },
   plugins: [],
 };

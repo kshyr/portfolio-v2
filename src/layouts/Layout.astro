@@ -31,6 +31,14 @@ const { title } = Astro.props;
   </body>
 </html>
 <style is:global>
+  :root {
+    --black: #171719;
+    --white: #f2fbeb;
+    --lowop-white: #f2fbeb10;
+    --darker-white: #a4a4a4;
+    --darker-black: #131315;
+  }
+
   html {
     @apply text-white;
     overflow-x: hidden;
@@ -160,10 +168,10 @@ const { title } = Astro.props;
     position: absolute;
     top: 0;
     left: 0;
-    background-color: #000000;
+    background-color: var(--black);
     opacity: 1;
     background-image: radial-gradient(#ffffff33 0.75px, transparent 0.75px),
-      radial-gradient(#ffffffaa 1px, #000000 1px);
+      radial-gradient(#ffffffaa 1px, var(--black) 1px);
     background-size: 60px 60px;
     background-position: 0 0, 30px 30px;
     clip-path: polygon(48% 0%, 74% 0%, 100% 27%, 100% 71%, 0% 100%, 0% 95%);
@@ -171,17 +179,16 @@ const { title } = Astro.props;
 
   .paper {
     width: 100%;
-    height: 200%;
+    height: 100vh;
     position: absolute;
-    top: -120px;
     left: 0;
     bottom: 0;
     right: 0;
-    background-color: #000000;
-    background-image: linear-gradient(#ffffff10 1.25px, transparent 1.25px),
-      linear-gradient(90deg, #ffffff10 1.25px, transparent 1.25px),
-      linear-gradient(#ffffff10 1px, transparent 1px),
-      linear-gradient(90deg, #ffffff10 1px, #000000 1px);
+    background-color: var(--darker-black) ;
+    background-image: linear-gradient(var(--lowop-white) 1.25px, transparent 1.25px),
+      linear-gradient(90deg, var(--lowop-white) 1.25px, transparent 1.25px),
+      linear-gradient(var(--lowop-white) 1px, transparent 1px),
+      linear-gradient(90deg, var(--lowop-white) 1px, var(--darker-black) 1px);
     background-size: 200px 200px, 200px 200px, 40px 40px, 40px 40px;
     background-position: -1.25px -1.25px, -1.25px -1.25px, -1px -1px,
       -0.75px -0.57px;
@@ -193,7 +200,7 @@ const { title } = Astro.props;
     left: 0;
     bottom: 0;
     right: 0;
-    background: radial-gradient(circle, transparent 50%, #000 100%);
+    background: radial-gradient(circle, transparent 50%, var(--black) 100%);
   }
 
   .cross-dots {
@@ -202,15 +209,15 @@ const { title } = Astro.props;
     position: absolute;
     top: 0;
     left: 0;
-    background: radial-gradient(black 0, transparent 0),
-      radial-gradient(black 0, transparent 0),
-      linear-gradient(#fff 4px, transparent 0),
+    background: radial-gradient(var(--black) 0, transparent 0),
+      radial-gradient(var(--black) 0, transparent 0),
+      linear-gradient(var(--white) 4px, transparent 0),
       linear-gradient(
         45deg,
         transparent 74px,
         transparent 75px,
-        #a4a4a4 75px,
-        #a4a4a4 76px,
+        var(--darker-white) 75px,
+        var(--darker-white) 76px,
         transparent 77px,
         transparent 109px
       ),
@@ -218,12 +225,12 @@ const { title } = Astro.props;
         -45deg,
         transparent 75px,
         transparent 76px,
-        #a4a4a4 76px,
-        #a4a4a4 77px,
+        var(--darker-white) 76px,
+        var(--darker-white) 77px,
         transparent 78px,
         transparent 109px
       ),
-      #fff;
+      var(--white);
     background-size: 109px 109px, 109px 109px, 100% 6px, 109px 109px,
       109px 109px;
     background-position: 54px 55px, 46px 46px, 46px 46px, 46px 46px, 46px 46px;

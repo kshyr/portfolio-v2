@@ -1,39 +1,124 @@
 ---
 import HeadingClient from './HeadingClient'
+import {FaGithub} from 'react-icons/fa'
+import {FiExternalLink} from 'react-icons/fi'
+
+type Project = {
+  name: string;
+  description: string;
+  imageUrl: string;
+  GitHubUrl: string;
+  liveUrl: string;
+  tags: string[];
+}
+
+const projects: Project[] = [
+  {
+    name: "Digital Garden",
+    description: `Collaborative board to share draft notes for project you're working on or ideas you will pick up in the future.\n
+      Built with TypeScript, React, Tailwind CSS and AWS AppSync (GraphQL) on backend. Hosted with AWS Amplify.`,
+    imageUrl: "https://portfolio-v1-deko95.vercel.app/_next/image?url=%2Fdigitalgarden_screenshot.png&w=3840&q=75",
+    GitHubUrl: "https://github.com/Tqkoyaki/DigitalGarden",
+    liveUrl: "https://master.dia4dpi85gb2h.amplifyapp.com/",
+    tags: ["TypeScript", "React", "AWS", "GraphQL", "Tailwind"]
+  },
+  {
+    name: "Tilebook",
+    description: `Tilemap editor. It lets you create 16x16 pixels tile and use it as a brush on 16x16 tiles map.\n
+      Uses Zustand for state management and data persistance with local storage. Showcases React performance optimizations.`,
+    imageUrl: "/assets/tilebook.jpg",
+    GitHubUrl: "https://github.com/deko95/tilebook",
+    liveUrl: "https://tilebook.vercel.app/",
+    tags: ["TypeScript", "React", "Zustand"]
+  },
+  {
+    name: "Git Lobby",
+    description: `Next 13 web application that uses GitHub REST API to browse popular repositories.\n
+      Next-auth for OAuth to get user's profile and store tech related notes and bookmarks.`,
+    imageUrl: "https://portfolio-v1-deko95.vercel.app/_next/image?url=%2Fgitlobby_screenshot.png&w=3840&q=75",
+    GitHubUrl: "https://github.com/deko95/gitlobby",
+    liveUrl: "https://gitlobby.vercel.app/",
+    tags: ["TypeScript", "React", "Next.js", "Tailwind"]
+  }
+]
 
 ---
 <section
   id="projects"
-  class="grid grid-cols-12 w-full h-screen relative z-20 [&>*]:border [&>*]:border-dashed"
+  class="w-full min-h-screen h-[100rem] relative z-20"
 >
+  <HeadingClient client:load heading={"~My projects~"} rotate={3} right />
+  <div class="flex flex-col w-full p-24 relative top-64 gap-8 items-center">{
+    projects.map((project, i) => {
+      return (
+        <div class="flex border-white border rounded-3xl p-8 bg-black gap-12 max-w-7xl">
+        {i % 2 === 0 ? (
+          <img src={project.imageUrl} class="project-image"/>
+          <div class="flex flex-col gap-4 w-full">
+            <h3 class="font-semibold text-3xl font-agra">{project.name}</h3>
+            <p class="whitespace-pre-line font-light">{project.description}</p>
+            <div class="flex gap-4 mt-auto ">
+              <div class="flex w-full gap-2 flex-wrap items-center">
+                {project.tags.map((tag) => {
+                    return <span class="project-tag">{tag}</span>
+                  })
+                }
+              </div>
+              <a href={project.GitHubUrl} class="project-link ml-auto" target="_blank">
+                <FaGithub className="h-8 w-8"/>GitHub
+              </a>
+              <a href={project.GitHubUrl} class="project-link" target="_blank">
+                <FiExternalLink className="h-8 w-8"/>Live
+              </a>
+            </div>
+          </div>
+        ) : (
+          <div class="flex flex-col gap-4 text-right w-full">
+            <h3 class="font-semibold text-3xl font-agra">{project.name}</h3>
+            <p class="whitespace-pre-line font-light">{project.description}</p>
+            <div class="flex gap-4 mt-auto">
+              <div class="flex w-full gap-2 flex-wrap items-center">
+                {project.tags.map((tag) => {
+                    return <span class="project-tag">{tag}</span>
+                  })
+                }
+              </div>
+                <a href={project.GitHubUrl} class="project-link" target="_blank">
+                  <FaGithub className="h-8 w-8"/>GitHub
+                </a>
+                <a href={project.GitHubUrl} class="project-link" target="_blank">
+                  <FiExternalLink className="h-8 w-8"/>Live
+                </a>
+            </div>
+          </div>
+          <img src={project.imageUrl} class="project-image"/>
+        )}
 
-      
-  <div class="h-full digital-garden project col-span-5 origin-top-left"></div>
-  <div class="h-full col-span-3"></div>
-  <div class="h-full tilebook project col-span-4"><HeadingClient client:load heading={"~My projects~"} rotate={3} right /></div>
 
-  <div class="h-full col-span-4"></div>
-  <div class="h-full git-lobby project col-span-5"></div>
-  <div class="h-full col-span-3"></div>
-
-  <div class="h-full col-span-4"></div>
-  <div class="h-full col-span-3"></div>
-  <div class="h-full spacex-clone project col-span-5 origin-bottom-right"></div>
+        </div>
+      )
+    })
+  }
+  </div>
 </section>
 <style>
   @tailwind components;
   @layer components {
-    .project {
-      @apply bg-no-repeat bg-contain bg-center bg-black
+    .project-link {
+      @apply flex items-center gap-2 p-2 shadow-md shadow-[#131313] rounded-lg border border-opacity-25 border-white hover:scale-105 hover:bg-[#1c1c1e] transition-all duration-75
+    }
+    .project-image {
+      @apply h-64 shadow-lg shadow-[#131313] border border-opacity-25 border-white rounded-lg
+    }
+    .project-tag {
+      @apply border shadow-md shadow-[#131313] border-opacity-25 border-white font-extralight inline-block px-2 rounded-full
     }
   }
   .digital-garden {
     background-image: url("https://portfolio-v1-deko95.vercel.app/_next/image?url=%2Fdigitalgarden_screenshot.png&w=3840&q=75");
-
   }
   .spacex-clone {
     background-image: url("https://portfolio-v1-deko95.vercel.app/_next/image?url=%2Fspacex_screenshot.png&w=3840&q=75");
-
   }
   .git-lobby {
     background-image: url("https://portfolio-v1-deko95.vercel.app/_next/image?url=%2Fgitlobby_screenshot.png&w=3840&q=75");
