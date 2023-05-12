@@ -46,9 +46,6 @@ export default function Navbar() {
         <li>
           <a href="#projects">projects</a>
         </li>
-        <li>
-          <a href="/blog">contact</a>
-        </li>
       </ul>
     </motion.header>
   );
