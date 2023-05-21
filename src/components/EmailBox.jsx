@@ -9,10 +9,10 @@ export default function EmailBox() {
 
     emailjs
       .sendForm(
-        process.env.PUBLIC_EMAILJS_SERVICE_ID,
-        process.env.PUBLIC_EMAILJS_TEMPLATE_ID,
+        import.meta.env.PUBLIC_EMAILJS_SERVICE_ID,
+        import.meta.env.PUBLIC_EMAILJS_TEMPLATE_ID,
         form.current,
-        process.env.PUBLIC_EMAILJS_USER_ID
+        import.meta.env.PUBLIC_EMAILJS_USER_ID
       )
       .then(
         (result) => {
