@@ -40,7 +40,7 @@ const skills: SkillItem[] = [
   },
   {
     name: "GraphQL",
-    src: "https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/graphql-icon.png",
+    src: "/assets/graphql_logo.png",
   },
   {
     name: "Amazon Web Services",

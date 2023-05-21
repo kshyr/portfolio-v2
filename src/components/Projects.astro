@@ -29,7 +29,7 @@ const projects: Project[] = [
     imageUrl: "/assets/tilebook.jpg",
     GitHubUrl: "https://github.com/deko95/tilebook",
     liveUrl: "https://tilebook.vercel.app/",
-    tags: ["TypeScript", "React", "Zustand"]
+    tags: ["TypeScript", "React", "Zustand", "Tailwind"]
   },
   {
     name: "Git Lobby",
@@ -39,13 +39,22 @@ const projects: Project[] = [
     GitHubUrl: "https://github.com/deko95/gitlobby",
     liveUrl: "https://gitlobby.vercel.app/",
     tags: ["TypeScript", "React", "Next.js", "Tailwind"]
+  },
+  {
+    name: "Any-Store",
+    description: `E-commerce website built with TypeScript, Next 13 and Tailwind CSS. Data is populated with DummyJSON.\n
+      Any-Store showcases core functionality of e-commerce websites, while being scalable and simple under the hood.`,
+    imageUrl:"/assets/any-store.jpg",
+    GitHubUrl:"https://github.com/deko95/any-store",
+    liveUrl:"https://any-store.vercel.app/",
+    tags: ["TypeScript", "React", "Next.js","Zustand", "Tailwind"]
   }
 ]
 
 ---
 <section
   id="projects"
-  class="w-full min-h-screen h-[100rem] relative z-20"
+  class="w-full min-h-screen h-[120rem] relative z-20"
 >
   <HeadingClient client:load heading={"~My projects~"} rotate={3} right />
   <div class="flex flex-col w-full p-24 relative top-64 gap-8 items-center">{
